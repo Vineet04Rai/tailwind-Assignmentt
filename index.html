@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style1.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Registration</title>
+  <!--<link rel = "icon" href="photos/img1.jpg" type = "image/x-icon">-->
+  <script>
+    function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+} 
+    function f1(){
+       var errorList=[];
+        errorList[0]="firstError";
+        errorList[1]="lastError";
+        errorList[2]="phoneError";
+        errorList[3]="passError";
+       var messageList=[];
+       messageList[0]="First name must not be empty";
+       messageList[1]="Last name must not be empty";
+       messageList[2]="Phone must not be empty";
+       messageList[3]="Password name must not be empty";
+       var myData= document.forms['myRegistration'];
+       for(i=0;i<4;i++){
+        if(myData.elements[i].value==""){
+          document.getElementById(errorList[i]).innerHTML=messageList[i];
+        }
+        else{
+          document.getElementById(errorList[i]).innerHTML="*";
+        }
+       }
+       return false;
+    }
+  </script>
+</head>
+<body>
+    <div class="topnav">
+        <a href="#home" class="active">Furnitures</a>
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks">
+            <center>          
+            <a href="#news">Home</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+          </center>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+  </div>
+  <section>
+    <div class="image">
+      <img src="photos/img1.jpg">
+    </div>
+    <div class="content">
+      <div class="formbox">
+        <h2>SignUp</h2>
+        <form name="myRegistration" action="#" method="post" onsubmit="return f1()">
+        <div class="input">
+          <span>First Name</span>
+          <input type="text" for="firstName">
+           <p id="firstError">*</p>
+        </div>
+          <div class="input">
+            <span>Last Name</span>
+            <input type="text" for="lastName">
+            <p id="lastError">*</p>
+          </div>
+          <div class="input">
+            <span>Phone Number</span>
+            <input type="text" for="phoneNumber">
+            <p id="phoneError">*</p>
+          </div>
+          <div class="input">
+            <span>Password</span>
+            <input type="password" for="pass">
+            <p id="passError">*</p>
+          </div>
+          <div class="input">
+            <input type="submit" name="submit" value="SignUp">
+          </div>
+          </table>
+          <div class="input">
+            <p>Already a member?<a href="#">LogIn</a></p>
+          </div>
+        </form>
+        <h3>Signup using other media</h3>
+        <ul class="icons">
+          <li><i class="fa fa-snapchat"></i></li>
+          <li><i class="fa fa-facebook"></i></li>
+          <li><i class="fa fa-instagram"></i></li>
+          <li><i class="fa fa-twitter"></i></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
